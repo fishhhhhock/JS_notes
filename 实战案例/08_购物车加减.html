@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!-- //readonly表示只读 -->
+        <input type="text" id="total" value="1" readonly>
+        <input type="button" value="+" id="add">
+        <input type="button"  value="-" id="reduce" disabled>
+    </div>
+
+    <script>
+        let total = document.querySelector('#total')
+        let add = document.querySelector('#add')
+        let reduce = document.querySelector('#reduce')
+        add.addEventListener('click',function(){
+            total.value++
+            reduce.disabled = false
+        })
+        reduce.addEventListener('click',function(){
+            total.value--
+            if(total.value <= 1){
+                reduce.disabled = true
+            }
+        })
+
+    </script>
+</body>
+</html>

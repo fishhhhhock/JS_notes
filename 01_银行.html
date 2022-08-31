@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var yue = 100;
+        var money = 0;
+        do{
+            var num = prompt('请输入你需要的操作\n1.存钱\n2.取钱\n3.查询余额\n4.退出')
+            switch(num){
+                case'1':
+                    var money = prompt('请输入需要存储的金额：');
+                    yue += parseFloat(money);
+                    alert('你当前的账户余额为：'+ yue +'元');
+                    break;
+                case'2':
+                    var money = prompt('请输入需要取出的金额：');
+                    // yue -= money;
+                    if(yue >= money){
+                        yue -= money;
+                        alert('你当前的账户余额为：' + yue + '元');
+                    }else{
+                        alert('账户当前余额不足，请及时充值。');
+                    }
+                    break;
+                case'3':
+                    alert('你当前的账户余额为：' + yue + '元');
+                    break;
+                case'4':
+                    alert('你已退出');
+                    break;
+            }
+        }while(num!=='4');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 正则表达式是用于匹配字符串中字符组合的模式.js中正则表达式也是对象
+        // 通常被用来检索\替换那些符合某个模式(规则)的文本,例如验证表单:用户名表单只能输入英文字母\数字或者下划线
+        // 昵称输入框中可以输入中文(匹配).此外,正则表达式还常用于过滤掉页面内容中的一些敏感词,或从字符串中获取我们想要的部分
+        // 定义正则表达式
+        let reg = /前端/
+        // 2.检测是否匹配
+        let str = '我们大家都在学前端'
+        // test()方法：用来查看正则表达式与指定字符串是否匹配（重点）
+        console.log(reg.test(str));
+        // exec()方法：在一个指定字符串中执行一个搜索匹配
+    </script>
+</body>
+</html>

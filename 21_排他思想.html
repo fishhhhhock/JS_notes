@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pink{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 排他思想:当前元素为A状态,其他元素为B状态 -->
+    <!-- 使用:  1.干掉所有人:使用for循环   2.复活他自己:通过this或者下标找到自己或者对应的元素
+     -->
+     <!-- button{第$个}*5 -->
+     <!-- 先让一个按钮默认为pink然后再进行修改 -->
+     <button class="pink">第1个</button>
+     <button>第2个</button>
+     <button>第3个</button>
+     <button>第4个</button>
+     <button>第5个</button>
+     <script>
+         let btns = document.querySelectorAll('button')
+         for(let i = 0;i<btns.length;i++){
+             btns[i].addEventListener('click',function(){
+                 document.querySelector('.pink').classList.remove('pink')
+                 this.classList.add('pink')
+             })
+         }
+     </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!--
+    <style>
+        .sum{
+            display: inline-block;
+            width: 162.4px;
+            height: 16px;
+            border: 1px black solid;
+        }
+    </style> 
+    --> 
+</head>
+<body>
+    <input type="text" name="" id="" class="number1">
+    <span>+</span>
+    <input type="text" name="" id="" class="number2">
+    <span>=</span>
+    <input type="text" name="" id="" class="sum">
+    <input type="button" value="计算" class="btn">
+
+    <script>
+        // document.getElementsByClassName得到的是集合，后面需要有[0]等表示下标的数字
+        var  num1 = document.querySelector('.number1');
+        var  num2 = document.querySelector('.number2');
+        var sum = document.querySelector('.sum');
+        var btn = document.querySelector('.btn');
+        btn.onclick = function(){
+            n1 = Number(num1.value);
+            n2 = Number(num2.value);
+            console.log(n1);
+            console.log(n2);
+            sum.value = n1+n2;
+        }
+        
+    </script>
+</body>
+</html>

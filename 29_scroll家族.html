@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- scroll家族 -->
+    <!-- 获取宽高：获取元素的内容总宽高（不包含滚动条）！！！返回值不带单位 ！！！-->
+    <!-- scrollWidth  和  scrollHeight   -->
+    <!-- 获取位置：滚动滚动条时，元素内容会向上或者向左滑动，显示内容会发生变化，
+                    获取元素内容往左，往上滚出去看不到的距离 
+            scrollLeft 和  scrollTop
+            这两个属性是可以修改和读取的
+    -->
+    <div>
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+
+    </div>
+    <script>
+        let div = document.querySelector('div')
+        div.addEventListener('scroll',function(){
+            console.log(this.scrollWidth);
+        })
+        // scroll家族求的是内容的宽度
+        // 页面滚动事件
+        window.addEventListener('scroll',function(){
+            console.log(document.documentElement.scrollTop);
+            document.documentElement.scrollTop = 100
+        })
+               // offset家族求的是盒子宽度的大小
+       // 获取宽高：
+               // 获取元素的自身宽高、包含元素自身设置的宽高，padding、border
+               // offsetWidth 和offsetHeight
+       // 获取位置：
+               // 获取元素距离自己定位父级元素的左、上距离
+               // offsetLeft 和 offsetTop  注意是只读属性
+
+            //clirnt家族
+            // 获取宽高：获取元素的可见部分宽高（不包含边框、滚动条）
+            // clientWidth 和   clientHeight
+            // 获取位置：获取左边框和上边框宽度
+            // clientLeft  和  clientTop  （只读属性）
+            // 会在窗口尺寸改变的时候触发事件：resize
+            // 检测屏幕宽度：
+            // window.addEventListener('resize',function(){
+                // let w = document.documentElement.clientWidth
+                // console.log(w);
+            // })
+
+
+
+
+
+
+    </script>
+</body>
+</html>

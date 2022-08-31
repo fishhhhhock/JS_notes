@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>document</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 1200px;
+      height: 400px;
+      margin: 50px auto;
+      border: 1px solid red;
+      overflow: hidden;
+    }
+
+    div li {
+      width: 240px;
+      height: 400px;
+      float: left;
+      transition: all 500ms;
+    }
+
+    div ul {
+      width: 1200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <ul>
+      <li>
+        <a href="#">
+          <img src="./images/1.jpg" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/2.jpg" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/3.jpg" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/4.jpg" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/5.jpg" alt="">
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+<script>
+// li的默认宽度是240
+// 1.鼠标经过时，所有li的宽度设置为100px,然后鼠标经过的那个li是800px
+// 2.鼠标离开时，li的宽度恢复为240px
+// 获取事件
+    let lis = document.querySelectorAll('li')
+    // 绑定鼠标经过和离开的事件
+    for (let i = 0;i<lis.length;i++){
+      // 鼠标经过
+      lis[i].addEventListener('mouseenter',function(){
+        // 排他思想 先干掉所有人，再单独救活我自己
+        for(let j = 0;j<i;j++){
+          lis[j].style.width = '100px'
+        }
+        this.style.width = '800px'
+      })
+      // 鼠标离开
+      lis[i].addEventListener('mouseleave',function(){
+        for(let j = 0;j<lis.length;j++){
+         lis[j].style.width = '240px'
+       }
+      })
+    }
+</script>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        table{
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 500px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        th{
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color:#fff;
+            height: 24px;
+        }
+
+        td{
+            border: 1px solid #d0d0d0;
+        }
+
+        .allCheck{
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 最外是table标签 -->
+    <!-- 表格中最小的内容容器是单元格，  通过  td元素创建 -->
+    <!-- 将td标签放进tr标签里面，表示一行单元格，使用tr换行 -->
+    <!-- 使用th标签添加行列标题  使用caption标签可以为表格增加标题 -->
+    <table>
+        <tr>
+            <th class="allCheck">
+                <input type="checkbox" name="" id="checkAll"><span class="all">全选</span>
+            </th>
+            <th>商品</th>
+            <th>商家</th>
+            <th>价格</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="check" class="ck">
+            </td>
+            <td>小米手机</td>
+            <td>小米</td>
+            <td>￥1999</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="check" class="ck">
+            </td>
+            <td>小米净水器</td>
+            <td>小米</td>
+            <td>￥4999</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="check" class="ck">
+            </td>
+            <td>小米电视</td>
+            <td>小米</td>
+            <td>￥5999</td>
+        </tr>
+    </table>
+
+    <script>
+        //注册事件
+        let checkAll = document.querySelector('#checkAll')
+        let cks = document.querySelectorAll('.ck')
+        let span = document.querySelector('span')
+        //点击全选框，下方的方框的全部选中，全选文字改成取消
+        checkAll.addEventListener('click',function(){
+            // console.log(checkAll.checked);
+            for(let i = 0; i<cks.length; i++){
+                //让下方的方框直接等于全选框的状态就可以同时选中或取消
+                cks[i].checked = checkAll.checked;
+                if(checkAll.checked){
+                    span.innerHTML = '取消'
+                }else{
+                    span.innerHTML = '全选'
+                }
+            }
+
+           //给三个小方框添加事件
+            for(let i = 0;i<cks.length;i++){
+                cks[i].addEventListener('click',function(){
+                    //只要任意点击一个按钮，都要遍历所有小按钮是否被选中，如果都被选中，全选框的也要打勾也要打勾
+                for(let j =0;j<cks.length;j++){
+                    if(cks[j].checked === false){
+                        checkAll.checked = false
+                        span.innerHTML = '全选'
+                        return
+                    }
+                }
+                checkAll.checked = true
+                span.innerHTML = '取消'
+                })
+            }
+        })
+    </script>
+</body>
+</html>

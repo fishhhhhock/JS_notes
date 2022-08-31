@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10">
+        尊敬的客户
+    </textarea>
+    <br>
+    <button class="btn" disabled>我已经阅读用户协议(6)</button>
+
+    <script>
+        let btn = document.querySelector('.btn')
+        //创建一个变量用来计数
+        let i = 6
+        //开启定时器
+        let timer = setInterval(function(){
+            i--
+            console.log(i);
+            btn.innerHTML = '我已经阅读用户协议'
+            if(i === 0){
+                //清除定时器
+                clearInterval(timer)
+                //开启按钮
+                btn.disabled = false
+                //变换文字
+                btn.innerHTML = '我同意该协议'
+            }
+        },1000)
+    </script>
+</body>
+</html>

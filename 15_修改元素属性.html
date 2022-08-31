@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="joy">joy</button>
+    <button id="irene">irene</button><br>
+    <img src="./img/joy.jpg" alt="" title="朴秀荣">
+
+    <script>
+        //修改元素属性  src
+        //1.获取元素
+        var joy = document.getElementById('joy');
+        var irene = document.getElementById('irene');
+        var img = document.querySelector('img');
+        //2.注册事件  处理程序
+        joy.onclick = function(){
+            img.src = './img/joy.jpg';
+            img.title = 'joy';
+        }
+        irene.onclick = function(){
+            img.src = './img/irene.jpg';
+            img.title = 'irene';
+        }
+
+    </script>
+</body>
+</html>

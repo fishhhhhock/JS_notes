@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 边界符：正则表达式中的边界符（位置符）用来提示字符所处的位置，主要有两个字符
+        // ^  表示匹配行首的文本（以谁开始）    $表示匹配行尾的文本（以谁结束
+        // 如果两个符号在一起，则表示必须是精确匹配
+        console.log(/哈/.test('哈'));//true
+        console.log(/^二哈/.test('很二哈哈'));//false
+        console.log(/^二哈/.test('二哈很傻'));//true
+        console.log(/^二哈$/.test('二哈很傻'));//false
+        console.log(/^二哈$/.test('二哈'));//true
+
+        // 量词：用来设定某个模式出现的次数
+        // *：重复零次或更多次
+        // +：重复一次或更多次
+        // ?:重复零次或一次
+        // {n}:重复n次
+        // {n,}：重复n次或更多次
+        // {n,m}:重复n到m次
+        // ！！逗号左右两侧千万不要出现空格！！
+
+        // 字符类：（1)[]匹配字符集合：后面的字符串只要包含abc任意一个字符，都返回true
+        console.log(/[abc]/.test('andy'));//true
+        console.log(/[abc]/.test('cry'));//true
+        console.log(/[abc]/.test('die'));//false
+
+        // []里面加上^取反符号
+        // 比如：[^a-z]匹配除了小写字母以外的字符
+        // 要写到中括号里面
+        // .匹配除换行符之外的任何单个字符
+
+        // 括号的总结:1.大括号 :表示重复次数   2.中括号:匹配方括号中的任意字符  3.小括号:表示优先级
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        let arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+        let div = document.querySelector('div')
+        setInterval(function(){
+            //实例化事件对象
+            let date = new Date()
+            let year = date.getFullYear()
+            let month = date.getMonth() +1  //取值是0-11，所以最后要+1
+            let date1 = date.getDate()
+            let hour = date.getHours()
+            let min = date.getMinutes()
+            let sec = date.getSeconds()
+            let day = date.getDay()
+            // 要使用反引号
+            div.innerHTML = `今天是： ${year}年${month}月${date1}日 ${hour}:${min}:${sec} ${arr[day]}`
+        },1000)
+    </script>
+</body>
+</html>

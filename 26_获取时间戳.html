@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 获取当前的时间戳就是获取毫秒数 -->
+    <!-- 1.使用getTime()方法      -->
+    <!-- 实例化：let date = =new Date() -->
+    <!-- 获取时间戳  console.log(date.getTime()) -->
+    <!-- 2.简写： console.log（+new Date())-->
+    <!-- 3.使用Date .now()方法：无需实例化，但是只能得到当前的时间戳，而前面两种可以返回指定时间的时间戳  -->
+    <!-- 通过时间戳得到是毫秒，需要转换成秒后再计算 -->
+    <!-- 计算天数day = parseInt(总秒数/60/60/24) -->
+    <!-- 计算小时hour = parseInt(总秒数/60/60%24) -->
+    <!-- 计算分钟数minute = parseInt(总秒数/60 %60) -->
+    <!-- 计算当前秒数second = parseInt(总秒数%60) -->
+    <div></div>
+    <script>
+        //获取当前的时间戳
+        let now = +new Date()
+        //得到指定时间的时间戳
+        let last = +new Date('2022-4-28 18:30:00')
+        //计算剩余的毫秒数/1000得到秒数
+        let count = (last - now) / 1000
+        let d = parseInt(count / 60/ 60 /24)
+        d = d < 10 ? '0' +d : d
+        let h = parseInt(count / 60/ 60 % 24)
+        h = h < 10 ? '0' +h : h
+        let m = parseInt(count / 60 % 60)
+        m = m < 10 ? '0' +m : m
+        let s = parseInt(count % 60)
+        s = s < 10 ? '0' +s : s
+
+    </script>
+        
+</body>
+</html>

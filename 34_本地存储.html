@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- localStorage -->
+    <!--   生命周期永久生效，除非手动删除 否则关闭页面也会存在 -->
+    <!-- 可以多窗口（页面）共享（同一浏览器可以共享 -->
+    <!-- 以键值对的形式存储使用 -->
+    <!-- 存储数据：  localStorage.setItem(key,value) -->
+    <script>
+        localStorage.setItem('uname','pink老师')
+        let obj = {
+            uname:'张三',
+            age:18,
+            addres:'黑马程序员'
+            
+        }
+
+        localStorage.setItem('obj',JSON.stringify(obj))
+        console.log(JSON.parse(localStorage.getItem('obj')))
+        localStorage.getItem()
+    </script>
+    <!-- 获取数据：  localStorage.getItem(key) -->
+    <!-- 删除数据：  localStorage.removeItem(key) -->
+    <!-- 本地只能存储字符串，无法存储复杂数据类型，需要将复杂数据类型转换成JSON字符串，再存储到本地 -->
+    <!-- JSON.stringify(复杂数据类型)：将复杂数据转换成JSON字符串，存储在本地存储中 -->
+    <!-- JSON.parse(JSON字符串)：将JSON字符串转换成对象，取出时候使用 -->
+</body>
+</html>
