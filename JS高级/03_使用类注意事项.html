@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        class Star{
+            // constructor里面的this指向实例对象，方法里面的this指向这个方法的调用者
+            constructor(uname,age){
+                this.uname = uname;
+                this.age = age;
+                this.btn = document.querySelector('button')
+                this.btn.onclick = this.sing;
+            }
+            sing(){
+                console.log(this.uname);
+            }
+        }
+        var ldh = new Star('刘德华')
+        // ES6中类没有变量提升，所以必须点定义类，才能通过类实例化对象
+        // 类里面的共有属性和方法一定要加this使用
+    </script>
+</body>
+</html>

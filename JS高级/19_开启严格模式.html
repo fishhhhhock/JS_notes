@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 严格模式：可以应用到整个脚本或个别函数中，分为为脚本开启严格模式和为函数开启严格模式 -->
+<!-- 为整个脚本文件开启严格模式，需要在所有语句之前放一个特定语句 "use strict"('use strict') -->
+<body>
+    <!-- 为整个脚本（script标签）开启严格模式 -->
+    <!-- 严格模式禁止自动或隐式创建全局变量 -->
+    <script>
+        'use strict'
+        // 下面的js 代码就会按严格模式执行代码
+    </script>
+    <script>
+        //立即执行函数
+        (function(){
+            'use strict'
+        })();
+    </script>
+</body>
+</html>

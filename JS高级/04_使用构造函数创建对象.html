@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数是一种特殊函数，即为对象成员变量赋初始值，它总与new一起使用。
+        // 可以把对象中一些公共的属性和方法抽取出来，然后封装到这个函数里面
+        // mew在执行时会做四件事情：
+        // 1.在内存中创建一个新的空对象
+        // 2.让this指向这个新的对象
+        // 3.执行构造函数里面的代码，给这个新对象添加属性和方法
+        // 4.返回这个新对象(构造函数里面不需要return)
+
+        function Star(uname,age) {
+            this.uname = uname;
+            thia.age = age;
+            this.sing = function(){
+                console.log('我会唱歌');
+            }
+        }
+
+        var ldh = new Star();
+    </script>
+</body>
+</html>

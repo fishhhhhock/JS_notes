@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 思考题1：这里的this指向的是什么？
+        var name = "The window";
+        var object = {
+            name: "My Object",
+            getNameFunc:function(){
+                return function(){
+                    return this.name;
+                }
+            }
+        };
+        console.log(object.getNameFunc()());
+        // 拆解：
+        var f = object.getNameFunc();
+        var f = function(){
+            return this.name;
+        }
+        f();
+        // 则等同于：
+        function(){this}()   //相当于一个立即执行函数，立即执行函数里面的this指向的是window
+
+        // 所以本题的this的指向是window,由于window下有一个属性name，这是一个全局变量
+        // 所以最后结果输出：The window
+
+        // 思考题2：
+        var name = "The window"
+        var object = {
+            name:"My Object",
+            getNameFunc:function(){
+                var that = this;
+                return function(){
+                    return that.name;
+                }
+            }
+        };
+        console.log(object.getNameFunc()());//输出的是  My Object
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- super关键字用于访问和调用对象父类上的函数。可以调用父类的构造函数，也可以调用父类的普通函数 -->
+    <script>
+        class Person{
+            constructor(surname){
+                this.surname = surname;
+            }
+        }
+
+        class Student extends Person{   //子类继承父类
+            constructor(surname,firstname){
+                super(surname);//调用父类的constructor（surname)
+                this.firsrname = firstname;//定义子类的独有属性
+            }
+        }
+        // 子类在构造函数中使用super，必须放到this的前面（必须先调用父类的构造方法，再使用子类构造方法）
+    </script>
+</body>
+</html>
