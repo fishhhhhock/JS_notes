@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ES6允许在大括号里面，直接写入变量和函数，作为对象的属性和方法  -->
+    <!-- 书写更加简洁 -->
+    <script>
+        let name = '尚硅谷'  //字符串
+        let change = function(){
+            console.log('加油加油');
+        } //函数
+
+        // 对象
+        const school = {
+            name,
+            change,
+            // improve:function(){
+                // console.log('冲冲冲');
+            // }
+            // 可以简化
+            improve(){
+                console.log('冲冲冲');
+            }
+        }
+    </script>
+</body>
+</html>

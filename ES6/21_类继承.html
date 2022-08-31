@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Phone{
+            // 构造方法
+            constructor(brand,price){
+                this.brand = brand
+                this.price = price
+            }
+
+            // 父类的成员属性
+            call(){
+                console.log("我会打电话");
+            }
+        }
+
+        class SmartPhone extends Phone{
+            // 构造方法
+            constructor(brand,price,color,size){
+                super(brand,price)
+                this.color = color
+                this.size = size
+            }
+
+            photo(){
+                console.log("会拍照");
+            }
+            playGame(){
+                console.log("玩游戏");
+            }
+            // 可以对父类中的方法进行重写
+            call(){
+                console.log("我会打视频通话");
+            }
+        }
+
+        const xiaomi = new SmartPhone('小米',5999,'white','4.9inch')
+        console.log(xiaomi);
+        xiaomi.call()
+        xiaomi.photo()
+        xiaomi.playGame()
+    </script>
+
+
+
+</body>
+</html>

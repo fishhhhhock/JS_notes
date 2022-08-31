@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        // 1.用于数组的合并
+        const kuaizi = ['网易太','小样'];
+        const fenghuang = ['增益','零花'];
+        const kuaizifenghuang = [...kuaizi,...fenghuang];
+        console.log(kuaizifenghuang);
+
+        // 数组的克隆
+        const sanzhihua = ['E','R','A'];
+        const sanyecao = [...sanzhihua];
+        console.log(sanyecao);
+
+        // 将伪数组转化为真正的数组
+        const divs = document.querySelectorAll('div');
+        const divArr = [...divs];
+        console.log(divArr);
+    </script>
+</body>
+</html>

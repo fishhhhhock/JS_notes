@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- setTimeout() 时，可以指定超时时执行的回调函数 -->
+    <!-- setInterval() 时，可以指定每个间隔执行的回调函数 -->
+    <script>
+        // 模拟获取  用户数据  订单数据   商品数据
+        function getUsers(){
+            setTimeout(() => {
+                let data = '用户数据'
+                iterator.next(data);
+            },1000);
+        }
+
+        function getOrders(){
+            setTimeout(() => {
+                let data = '订单数据'
+                iterator.next(data);
+            },1000);
+        }
+
+        function getGoods(){
+            setTimeout(() => {
+                let data = '商品数据'
+                iterator.next(data);
+            },1000);
+        }
+
+        function * gen(){
+            let users = yield getUsers();
+            console.log(users);
+            let orders = yield getOrders();
+            console.log(orders);
+            let goods = yield getGoods();
+            console.log(goods);
+
+        }
+
+        // 调用生成器函数
+        let iterator = gen()
+        iterator.next();//这里执行的是        function * gen(){ yield getUsers();  这两句程序
+    </script>
+</body>
+</html>

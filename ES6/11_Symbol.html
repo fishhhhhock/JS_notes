@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // symbol是一种类似于字符串的数据类型
+        // 创建symbol
+        let s = Symbol();
+        // symbol函数可以接受一个字符串作为参数，表示对symbol实例的描述
+        // 相同参数的symbol函数的返回值是不相等的
+        let s2 = Symbol('尚硅谷')
+        // symbol.for创建
+        let s3 = Symbol.for('尚硅谷')
+
+        // 不能与其他数据进行运算
+        let result = s + 100;
+        let result1 = s > 100;
+        let result2 = s + s;
+
+        // JS中的数据类型
+        // USONB
+        // U : undefined
+        // S : string  Symbol
+        // O : Object
+        // N : null Number
+        // B : boolean
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Iterator接口就是对象属性，全名是symbol.iterator -->
+    <script>
+        // 声明数组
+        const arr = ['唐僧','猪八戒','孙悟空','沙悟净'];
+        // for...of遍历：遍历的是值；for...in...遍历：遍历的是键
+        // for(let v in arr){
+        for(let v of arr){
+            console.log(v);
+        }
+    </script>
+</body>
+</html>

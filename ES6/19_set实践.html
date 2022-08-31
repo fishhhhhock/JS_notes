@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,6,7,8,9,8,5,1]
+        // 数组去重
+        let result = [...new Set(arr)]
+        console.log(result);
+        // 交集
+        let arr2 = [4,5,6,5,6]
+        // let result1 = [...new Set(arr)].filter(item => {
+            // let s2 = new Set(arr2);//将数组转换为去重后的集合，(4,5,6)
+            // if(s2.has(item)){
+                // return true;
+            // }else{
+                // return false;
+            // }
+        // });
+
+        // 简写：
+        let result2 = [...new Set(arr)].filter(item => new Set(arr2).has(item))
+        // 并集
+        let union = [...new Set([...arr,...arr2])]
+        console.log(union);
+        // 差集
+        let result3 = [...new Set(arr)].filter(item => !(new Set(arr2).has(item)))
+
+    </script>
+</body>
+</html>

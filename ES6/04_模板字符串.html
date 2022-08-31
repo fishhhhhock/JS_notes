@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6引入新的声明字符串的方式 [``] '' ""
+        // 1.声明
+        let str = `我是一个字符串噢~`;
+        console.log(str,typeof str);
+
+        // 2.内容中可以直接出现换行符
+        let strr = `<ul>
+                        <li>沈腾</li>
+                        <li>玛丽</li>
+                        <li>张良</li>
+                        <li>赵四</li>
+                        </ul>`;
+
+        // 3.变量拼接
+        let ovest = '未向'
+        let out = `${ovest}不知道`
+        
+        console.log(out);
+        console.log(strr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 一个promise对象是一个可以带有“.then()”方法的链式对象，其代表的是一个操作结果未知，
+        无论谁访问这个对象，都能够使用.then()方法加入回调等待操作出现成功结果或失败时的提醒通知 -->
+        <!-- promise就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果，从它可以获取异步操作的消息 -->
+    <script>
+        // promise用来封装异步操作并可以获取其成功或失败的结果
+        // 实例化promise对象
+        const p = new Promise(function(resolve,reject){
+            //异步编程：setTimeout
+            setTimeout(function() {
+                let data = '数据库中的用户数据'
+                resolve(data)//可以将promise函数状态从未完成（pending）变为成功（resolved）
+
+                let err = '数据读取失败'
+                reject(err);//可以将promise函数状态从未完成（pending）变为失败（rejected）
+            }, 1000);
+        })
+
+        // promise函数完成后会调用promise对象的then方法(promise成功调用value方法，失败调用error方法)
+        p.then(function(value){
+            console.log(value);
+        },function(error){
+            console.warn(error);
+        })
+    </script>
+</body>
+</html>

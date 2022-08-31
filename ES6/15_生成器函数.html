@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 生成器其实就是一个特殊函数，执行函数会返回一个遍历器对象，一个遍历器对象生成函数
+        // 异步编程  纯回调函数  node fs ajax mongodb
+        // yield（英语的意思是“产出”）:定义不同的内部状态，函数代码的分隔符，是暂停执行的标记
+        // next方法可以恢复执行
+        function * gen(){
+            // console.log(111);
+            yield '一只没有耳朵'
+            // console.log(222);
+            yield '一只没有眼睛'
+            // console.log(333);
+            yield '两只都奇怪';
+            // console.log(444);
+
+        }
+        // 函数开始执行，直到遇到第一个yield停止
+        // 调用 Generator 函数，返回一个遍历器对象，代表 Generator 函数的内部指针。
+        // 以后，每次调用遍历器对象的next方法，就会返回一个有着value和done两个属性的对象。
+        // value属性表示当前的内部状态的值，是yield表达式后面那个表达式的值；done属性是一个布尔值，表示是否遍历结束。
+        let iterator = gen();
+        
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+
+        // 遍历
+        for(let v of gen()){
+            console.log(v);
+        }
+    </script>
+</body>
+</html>
